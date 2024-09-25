@@ -80,9 +80,9 @@ The service will be available on `http://localhost:8080.`
 
 ### My savannah psql database looks like this
 
-
-- Creating a customer Before auth.
   ![Alt text](/assets/psqldatabase.png "Creating a customer before auth")
+
+  
 
 # REST API Endpoints
 
