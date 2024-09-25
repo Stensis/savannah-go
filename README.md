@@ -165,4 +165,4 @@ To deploy the service, you can configure any `PAAS/FAAS/IAAS` provider of your c
 * Add GraphQL Support: Replace the REST API with or augment it using GraphQL.
 * Add Pagination: Implement pagination for customer and order listings.
 * Add Logging: Implement more sophisticated logging with log levels and structured logging.
-* CI/CD Improvements: Automate deployments to a cloud provider.
+* CI/CD Improvements: Automate deployments to a cloud provider.# savannah-go
