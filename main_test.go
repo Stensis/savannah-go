@@ -1,7 +1,6 @@
 package main
 
 import(
-    "fmt"
     "bytes"
     "context"
 	"testing"
@@ -11,6 +10,7 @@ import(
     "go-service/model"
     "go-service/lib"
     "github.com/DATA-DOG/go-sqlmock"
+    "github.com/jackc/pgx/v4"
     "github.com/stretchr/testify/assert"
 )
 
@@ -36,22 +36,23 @@ func TestCreateOrder(t *testing.T) {
 
     t.Run("NewOrder", func(t *testing.T) {
         mock.ExpectQuery("SELECT name FROM users WHERE name = $1").WithArgs("John Doe").WillReturnError(pgx.ErrNoRows)
-
+    
+        // Perform the request and assertions
         w := httptest.NewRecorder()
         r := httptest.NewRequest(http.MethodPost, "/api/v1/orders", bytes.NewBuffer(orderJSON))
-
+    
+        // Ensure context with mock DB is used
         ctx := context.WithValue(r.Context(), "DB", db)
         r = r.WithContext(ctx)
-
-        // Perform the request
+    
         lib.CreateOrder(w, r)
-        fmt.Println(w.Body)
-
-        assert.Equal(t, http.StatusOK, w.Code)
+        assert.Equal(t, http.StatusOK, w.Code, "Expected HTTP status OK")
+    
         if err := mock.ExpectationsWereMet(); err != nil {
-            t.Errorf("not all expectations were met: %v", err)
+            t.Errorf("Not all expectations were met: %v", err)
         }
     })
+    
     /*
     order := model.Order{
         CustomerID : 2,
