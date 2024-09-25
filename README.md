@@ -94,6 +94,12 @@ The service will be available on `http://localhost:8080.`
 }
 ```
 
+- Creating a customer Before auth.
+  ![Alt text](/assets/invalidtoken.png "Creating a customer before auth")
+
+- Creating a customer After auth.
+  ![Alt text](/assets/usercreated.png "Creating a customer After auth")
+
 ### 2. Create Order
 
 - URL: `/orders`
@@ -108,11 +114,25 @@ The service will be available on `http://localhost:8080.`
 }
 ```
 
+- Creating Order related to a customer.
+  ![Alt text](/assets/OrderSuccess.png "Creating a customer After auth")
+
 ### 3. OpenID Connect Callback
 
 - URL: `/auth/callback`
 - Method: `GET`
 - Description: Handles OAuth2 token exchange for OpenID Connect.
+
+* You get a prompt of your google email.
+  ![Alt text](/assets/AuthLogin.png "Creating a customer After auth")
+
+- Adding google Password.
+  ![Alt text](/assets/Password.png "Creating a customer After auth")
+
+- Lastly you get a 2-step verification prompt for safety.
+
+- The token is created and auth is complete.
+  ![Alt text](/assets/token.png "Creating a customer After auth")
 
 # Africa's Talking SMS IntegrationAfrica's Talking SMS Integration
 
@@ -125,7 +145,14 @@ Make sure to set up your sandbox or live Africa's Talking account and configure 
 1. Sign up for Africa's Talking.
 2. Create a new app in the Africa's Talking sandbox.
 3. Generate the API key and sandbox credentials.
-4. Use the sandbox API key and username ```(sandbox)``` for development and testing purposes.
+
+- Sandbox example.
+  ![Alt text](/assets/sms.png "Creating a customer After auth")
+4. Use the sandbox API key and username `(sandbox)` for development and testing purposes.
+
+
+- Prod sms example.
+  ![Alt text](/assets/PRODsms.png "Creating a customer After auth")
 
 # Unit Testing
 
@@ -160,9 +187,9 @@ The project uses GitHub Actions for CI. The CI workflow is located at .github/wo
 
 To deploy the service, you can configure any `PAAS/FAAS/IAAS` provider of your choice. For example, you can deploy to services like Heroku, AWS Lambda, or Google Cloud Run.
 
+# Future Enhancements
 
-#  Future Enhancements
-* Add GraphQL Support: Replace the REST API with or augment it using GraphQL.
-* Add Pagination: Implement pagination for customer and order listings.
-* Add Logging: Implement more sophisticated logging with log levels and structured logging.
-* CI/CD Improvements: Automate deployments to a cloud provider.# savannah-go
+- Add GraphQL Support: Replace the REST API with or augment it using GraphQL.
+- Add Pagination: Implement pagination for customer and order listings.
+- Add Logging: Implement more sophisticated logging with log levels and structured logging.
+- CI/CD Improvements: Automate deployments to a cloud provider.# savannah-go
