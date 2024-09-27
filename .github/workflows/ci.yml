@@ -24,12 +24,10 @@ jobs:
       - name: Install dependencies
         run: go mod download
 
-      - name: build binary
-      - run: go build main.go  
+      - name: Build binary
+        run: go build main.go
 
-      name: Go CI/CD
-
-
+        
 # TO DEPLOY TO CLOUD
 # on:
 #   push:
