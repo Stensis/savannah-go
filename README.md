@@ -32,13 +32,13 @@ Ensure that you have the following before setting up the project:
 
 ```bash
 git clone https://github.com/Stensis/savannah-go
-cd your-repo
+cd savannah-go
 ```
 
 ### 2.Install Go Modules
 
 ```
-go mod tidy
+go mod download
 ```
 
 ### 3. Setup Environment Variables
@@ -82,7 +82,6 @@ The service will be available on `http://localhost:8080.`
 
   ![Alt text](/assets/psqldatabase.png "Creating a customer before auth")
 
-  
 
 # REST API Endpoints
 
